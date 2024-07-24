@@ -22,6 +22,9 @@
 		1FF5FBAE2C4FC81E001CC8ED /* SplashVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FBAD2C4FC81E001CC8ED /* SplashVM.swift */; };
 		1FF5FBB02C4FC84D001CC8ED /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FBAF2C4FC84D001CC8ED /* HomeCoordinator.swift */; };
 		1FF5FBB22C4FC878001CC8ED /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FBB12C4FC878001CC8ED /* SplashCoordinator.swift */; };
+		1FF5FBB62C50E868001CC8ED /* AssetKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1FF5FBB52C50E868001CC8ED /* AssetKit */; };
+		1FF5FBB82C50EC0D001CC8ED /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FBB72C50EC0D001CC8ED /* AppViewController.swift */; };
+		1FF5FBBB2C50ECAA001CC8ED /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FBBA2C50ECAA001CC8ED /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		1FF5FBAD2C4FC81E001CC8ED /* SplashVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVM.swift; sourceTree = "<group>"; };
 		1FF5FBAF2C4FC84D001CC8ED /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		1FF5FBB12C4FC878001CC8ED /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		1FF5FBB32C50DDB9001CC8ED /* AssetKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = AssetKit; sourceTree = "<group>"; };
+		1FF5FBB72C50EC0D001CC8ED /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
+		1FF5FBBA2C50ECAA001CC8ED /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF5FBB62C50E868001CC8ED /* AssetKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +83,11 @@
 		1FF5FB582C4FBF25001CC8ED = {
 			isa = PBXGroup;
 			children = (
+				1FF5FBB32C50DDB9001CC8ED /* AssetKit */,
 				1FF5FB632C4FBF26001CC8ED /* pokeDex-example-app */,
 				1FF5FB7A2C4FBF26001CC8ED /* pokeDex-example-appTests */,
 				1FF5FB622C4FBF26001CC8ED /* Products */,
+				1FF5FBB42C50E868001CC8ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +105,7 @@
 			children = (
 				1FF5FB942C4FC17B001CC8ED /* Application */,
 				1FF5FB952C4FC1A4001CC8ED /* Modules */,
+				1FF5FBB92C50EC82001CC8ED /* Extensions */,
 			);
 			path = "pokeDex-example-app";
 			sourceTree = "<group>";
@@ -113,6 +123,7 @@
 			children = (
 				1FF5FB642C4FBF26001CC8ED /* AppDelegate.swift */,
 				1FF5FBA32C4FC47B001CC8ED /* AppCoordinator.swift */,
+				1FF5FBB72C50EC0D001CC8ED /* AppViewController.swift */,
 				1FF5FB722C4FBF26001CC8ED /* Info.plist */,
 				1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */,
 			);
@@ -177,6 +188,21 @@
 			path = SwiftUIViews;
 			sourceTree = "<group>";
 		};
+		1FF5FBB42C50E868001CC8ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1FF5FBB92C50EC82001CC8ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1FF5FBBA2C50ECAA001CC8ED /* UIViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +219,9 @@
 			dependencies = (
 			);
 			name = "pokeDex-example-app";
+			packageProductDependencies = (
+				1FF5FBB52C50E868001CC8ED /* AssetKit */,
+			);
 			productName = "pokeDex-example-app";
 			productReference = 1FF5FB612C4FBF26001CC8ED /* pokeDex-example-app.app */;
 			productType = "com.apple.product-type.application";
@@ -279,7 +308,9 @@
 			files = (
 				1FF5FB9C2C4FC3A6001CC8ED /* PokemonListSC.swift in Sources */,
 				1FF5FBAE2C4FC81E001CC8ED /* SplashVM.swift in Sources */,
+				1FF5FBB82C50EC0D001CC8ED /* AppViewController.swift in Sources */,
 				1FF5FB652C4FBF26001CC8ED /* AppDelegate.swift in Sources */,
+				1FF5FBBB2C50ECAA001CC8ED /* UIViewExtension.swift in Sources */,
 				1FF5FBAC2C4FC80E001CC8ED /* SplashSC.swift in Sources */,
 				1FF5FB9E2C4FC3C5001CC8ED /* PokemonDetailsSC.swift in Sources */,
 				1FF5FBA22C4FC406001CC8ED /* PokemonDetailsVM.swift in Sources */,
@@ -571,6 +602,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1FF5FBB52C50E868001CC8ED /* AssetKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AssetKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1FF5FB592C4FBF25001CC8ED /* Project object */;
 }
