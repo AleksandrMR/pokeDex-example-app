@@ -11,22 +11,22 @@ import AssetKit
 struct SplashSC: View {
     var body: some View {
         VStack {
-            Text("PokeDex App")
+            Text(AppStrings.appName)
                 .font(AKFonts.pokemonClassic(35).font)
                 .foregroundColor(AKColors.yellowffde00.color)
                 .frame(alignment: .leading)
                 .padding()
             AKImages.pokeBall.image
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
             Button {
                 
             } label: {
-                Text("Go to App")
+                Text(AppStrings.Splash.btnGoToApp)
                     .font(AKFonts.pokemonClassic(15).font)
                 AKIcons.arrowRight.icon
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .scaledToFit()
                     .frame(height: 20)
             }
             .padding()

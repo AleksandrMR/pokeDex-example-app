@@ -10,18 +10,29 @@ import AssetKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    // MARK: - Var
     var window: UIWindow?
-
+    var appCoordinator: AppCoordinator?
+    
     // MARK: - UIApplicationDelegate methods
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
                      launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        AKFonts.registerFonts()
-        
-        window?.rootViewController = SplashRootVC()
-        window?.makeKeyAndVisible()
+        setupAfterLaunch()
         return true
     }
 }
 
+// MARK: - Extensions
+extension AppDelegate {
+    private func setupAfterLaunch() {
+        AKFonts.registerFonts()
+        
+        let navController = UINavigationController.init()
+        appCoordinator = AppCoordinator.init(navigationController: navController)
+        appCoordinator?.start()
+        
+        window?.rootViewController = navController
+        window?.makeKeyAndVisible()
+    }
+}

@@ -6,3 +6,42 @@
 //
 
 import UIKit
+import Logger
+
+protocol Coordinator: AnyObject {
+    var parentCoordinator: Coordinator? { get set }
+    var children: [Coordinator] { get set }
+    var navigationController: UINavigationController { get set }
+    func start()
+}
+
+class AppCoordinator: Coordinator {
+    
+    // MARK: - Var
+    var parentCoordinator: Coordinator?
+    var children: [Coordinator] = []
+    var navigationController: UINavigationController
+    
+    // MARK: - Initialization func
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
+    
+    deinit {
+        Logger.shared.printLog(AppStrings.Log.appCoordinatorDeinit, logType: .info, .message)
+    }
+    
+    // MARK: - Flow funcs
+    func start() {
+        Logger.shared.printLog(AppStrings.Log.appCoordinatorStart, logType: .info, .message)
+        goToSplash()
+    }
+    
+    // MARK: - Flow private funcs
+    private func goToSplash() {
+        let splashCoordinator = SplashCoordinator.init(navigationController: navigationController)
+        splashCoordinator.parentCoordinator = self
+        children.append(splashCoordinator)
+        splashCoordinator.start()
+    }
+}
