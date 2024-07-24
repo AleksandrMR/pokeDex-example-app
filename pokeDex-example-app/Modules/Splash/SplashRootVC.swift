@@ -8,6 +8,9 @@
 import SwiftUI
 
 class SplashRootVC: AppViewController {
+    
+    // MARK: - Var
+    var vm: SplashVM?
 
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -15,9 +18,10 @@ class SplashRootVC: AppViewController {
         setupSwiftUIView()
     }
     
-    // MARK: - Flow funcs
+    // MARK: - Flow private funcs
     private func setupSwiftUIView() {
-        let contentView = UIHostingController(rootView: SplashSC())
+        guard let vm = self.vm else { return }
+        let contentView = UIHostingController(rootView: SplashSC(vm: vm))
         embedSwiftUIView(contentView)
     }
 }

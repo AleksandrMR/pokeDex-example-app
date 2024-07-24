@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Logger
 
 class AppViewController: UIViewController {
 
@@ -16,7 +17,7 @@ class AppViewController: UIViewController {
     }
     
     deinit {
-        
+        Logger.shared.printLog(AppStrings.Log.appViewController, logType: .info, .message)
     }
     
     // MARK: - Flow funcs

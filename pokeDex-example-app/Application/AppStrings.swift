@@ -20,5 +20,6 @@ struct AppStrings {
         static let appCoordinatorDeinit = "AppCoordinator Deinit"
         static let splashCoordinatorStart = "SplashCoordinator Start"
         static let splashCoordinatorDeinit = "SplashCoordinator Deinit"
+        static let appViewController = "AppViewController Deinit"
     }
 }
