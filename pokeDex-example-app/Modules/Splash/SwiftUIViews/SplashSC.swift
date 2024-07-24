@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AssetKit
+import ComponentsKit
 
 struct SplashSC: View {
     
@@ -41,20 +42,9 @@ extension SplashSC {
     }
     
     @ViewBuilder var btnGoToApp: some View {
-        Button {
+        CKButton1(title: AppStrings.Splash.btnGoToApp) {
             vm.goToHome()
-        } label: {
-            Text(AppStrings.Splash.btnGoToApp)
-                .font(AKFonts.pokemonClassic(15).font)
-            AKIcons.arrowRight.icon
-                .resizable()
-                .scaledToFit()
-                .frame(height: 20)
         }
-        .padding()
-        .foregroundColor(AKColors.redcc0000.color)
-        .background(AKColors.yellowffde00.color)
-        .cornerRadius(12)
     }
 }
 

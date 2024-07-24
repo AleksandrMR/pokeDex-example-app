@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F96002F2C5143AC00C83FCB /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 1F96002E2C5143AC00C83FCB /* Logger */; };
 		1F9600312C5143E600C83FCB /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9600302C5143E600C83FCB /* AppStrings.swift */; };
+		1FAA989C2C517247007E98C5 /* ComponentsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1FAA989B2C517247007E98C5 /* ComponentsKit */; };
 		1FF5FB652C4FBF26001CC8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FB642C4FBF26001CC8ED /* AppDelegate.swift */; };
 		1FF5FB6E2C4FBF26001CC8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */; };
 		1FF5FB7C2C4FBF26001CC8ED /* pokeDex_example_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FB7B2C4FBF26001CC8ED /* pokeDex_example_appTests.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		1F96002D2C51402100C83FCB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Logger; sourceTree = "<group>"; };
 		1F9600302C5143E600C83FCB /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
+		1FAA989A2C516F79007E98C5 /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ComponentsKit; sourceTree = "<group>"; };
 		1FF5FB612C4FBF26001CC8ED /* pokeDex-example-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokeDex-example-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF5FB642C4FBF26001CC8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F96002F2C5143AC00C83FCB /* Logger in Frameworks */,
+				1FAA989C2C517247007E98C5 /* ComponentsKit in Frameworks */,
 				1FF5FBB62C50E868001CC8ED /* AssetKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +93,7 @@
 			children = (
 				1F96002D2C51402100C83FCB /* Logger */,
 				1FF5FBB32C50DDB9001CC8ED /* AssetKit */,
+				1FAA989A2C516F79007E98C5 /* ComponentsKit */,
 				1FF5FB632C4FBF26001CC8ED /* pokeDex-example-app */,
 				1FF5FB7A2C4FBF26001CC8ED /* pokeDex-example-appTests */,
 				1FF5FB622C4FBF26001CC8ED /* Products */,
@@ -229,6 +233,7 @@
 			packageProductDependencies = (
 				1FF5FBB52C50E868001CC8ED /* AssetKit */,
 				1F96002E2C5143AC00C83FCB /* Logger */,
+				1FAA989B2C517247007E98C5 /* ComponentsKit */,
 			);
 			productName = "pokeDex-example-app";
 			productReference = 1FF5FB612C4FBF26001CC8ED /* pokeDex-example-app.app */;
@@ -618,6 +623,10 @@
 		1F96002E2C5143AC00C83FCB /* Logger */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Logger;
+		};
+		1FAA989B2C517247007E98C5 /* ComponentsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ComponentsKit;
 		};
 		1FF5FBB52C50E868001CC8ED /* AssetKit */ = {
 			isa = XCSwiftPackageProductDependency;
