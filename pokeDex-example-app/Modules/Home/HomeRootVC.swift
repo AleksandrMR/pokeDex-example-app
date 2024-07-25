@@ -17,7 +17,8 @@ class HomeRootVC: AppViewController {
     
     // MARK: - Flow private funcs
     private func setupSwiftUIView() {
-        let contentView = UIHostingController(rootView: PokemonListSC())
+        let vm = PokemonListVM()
+        let contentView = UIHostingController(rootView: PokemonListSC(vm: vm))
         embedSwiftUIView(contentView)
     }
 }

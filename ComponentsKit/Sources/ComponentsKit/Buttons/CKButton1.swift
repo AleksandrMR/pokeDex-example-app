@@ -11,8 +11,8 @@ import AssetKit
 public struct CKButton1: View {
     
     // MARK: - Let
-    let title: String
-    let action: ()->()
+    private let title: String
+    private let action: ()->()
     
     // MARK: - Initialization func
     public init(title: String, action: @escaping () -> Void) {
@@ -25,17 +25,22 @@ public struct CKButton1: View {
         Button {
             action()
         } label: {
+            btnLabel
+        }
+        .buttonStyle(Button1Style())
+    }
+}
+
+// MARK: - Extensions
+extension CKButton1 {
+    @ViewBuilder var btnLabel: some View {
+        HStack {
             Text(title)
-                .font(AKFonts.pokemonClassic(15).font)
             AKIcons.arrowRight.icon
                 .resizable()
                 .scaledToFit()
                 .frame(height: 20)
         }
-        .padding()
-        .foregroundColor(AKColors.redcc0000.color)
-        .background(AKColors.yellowffde00.color)
-        .cornerRadius(12)
     }
 }
 
