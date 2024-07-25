@@ -14,6 +14,6 @@ class SplashVM: ObservableObject {
     
     // MARK: - Flow funcs
     func goToHome() {
-        coordinator?.goToHome()
+        coordinator?.initHomeCoordinator()
     }
 }

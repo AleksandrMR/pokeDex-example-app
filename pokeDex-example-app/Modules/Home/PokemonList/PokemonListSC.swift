@@ -19,7 +19,7 @@ struct PokemonListSC: View {
         VStack {
             List (1..<100) { item in
                 CKListItem1(title: "PokemonListSC",
-                            imgPath: AppConstants.pokImagePath) {
+                            imgPath: vm.getPokImagePath(id: item)) {
                     vm.goToPokemonDetails()
                 }
                 .listRowSeparator(.hidden)

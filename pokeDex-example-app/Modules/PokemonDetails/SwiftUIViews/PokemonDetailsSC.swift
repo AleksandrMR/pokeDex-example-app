@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct PokemonDetailsSC: View {
+    
+    // MARK: - Var
+    @StateObject var vm: PokemonDetailsVM
+    
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("PokemonDetailsSC")
     }
 }
 
+// MARK: - Preview
 #Preview {
-    PokemonDetailsSC()
+    PokemonDetailsSC(vm: PokemonDetailsVM())
 }

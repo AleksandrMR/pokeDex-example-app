@@ -34,11 +34,11 @@ class AppCoordinator: Coordinator {
     // MARK: - Flow funcs
     func start() {
         Logger.shared.printLog(AppStrings.Log.appCoordinatorStart, logType: .info, .message)
-        goToSplash()
+        initSplashCoordinator()
     }
     
     // MARK: - Flow private funcs
-    private func goToSplash() {
+    private func initSplashCoordinator() {
         let splashCoordinator = SplashCoordinator.init(navigationController: navigationController)
         splashCoordinator.parentCoordinator = self
         children.append(splashCoordinator)

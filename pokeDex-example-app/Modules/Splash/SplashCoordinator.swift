@@ -30,8 +30,11 @@ class SplashCoordinator: Coordinator {
         goToSplashVC()
     }
     
-    func goToHome() {
-        navigationController.pushViewController(HomeRootVC(), animated: true)
+    func initHomeCoordinator() {
+        let homeCoordinator = HomeCoordinator.init(navigationController: navigationController)
+        homeCoordinator.parentCoordinator = self
+        children.append(homeCoordinator)
+        homeCoordinator.start()
     }
     
     // MARK: - Flow private funcs

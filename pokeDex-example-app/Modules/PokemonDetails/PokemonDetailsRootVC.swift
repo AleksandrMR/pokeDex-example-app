@@ -1,16 +1,16 @@
 //
-//  HomeRootVC.swift
+//  PokemonDetailsRootVC.swift
 //  pokeDex-example-app
 //
-//  Created by Aleksandr Milashevski on 23/07/24.
+//  Created by Aleksandr Milashevski on 25/07/24.
 //
 
 import SwiftUI
 
-class HomeRootVC: AppViewController {
+class PokemonDetailsRootVC: AppViewController {
     
     // MARK: - Var
-    var vm: PokemonListVM?
+    var vm: PokemonDetailsVM?
 
     // MARK: - Lifecycle funcs
     override func viewDidLoad() {
@@ -19,19 +19,14 @@ class HomeRootVC: AppViewController {
         setupSwiftUIView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupNavigationController()
-    }
-    
     // MARK: - Flow private funcs
     private func setupNavigationController() {
-        (navigationController as? AppNavController)?.setNavBar(isHidden: true)
+        (navigationController as? AppNavController)?.setNavBar(isHidden: false)
     }
     
     private func setupSwiftUIView() {
         guard let vm = self.vm else { return }
-        let contentView = UIHostingController(rootView: PokemonListSC(vm: vm))
+        let contentView = UIHostingController(rootView: PokemonDetailsSC(vm: vm))
         embedSwiftUIView(contentView)
     }
 }
