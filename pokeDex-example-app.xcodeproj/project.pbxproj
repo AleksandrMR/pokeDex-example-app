@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F4AB0B12C52415F0077EE71 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AB0B02C52415F0077EE71 /* AppConstants.swift */; };
+		1F4AB0B52C524DD00077EE71 /* AppNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AB0B42C524DD00077EE71 /* AppNavController.swift */; };
 		1F96002F2C5143AC00C83FCB /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 1F96002E2C5143AC00C83FCB /* Logger */; };
 		1F9600312C5143E600C83FCB /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9600302C5143E600C83FCB /* AppStrings.swift */; };
 		1FAA989C2C517247007E98C5 /* ComponentsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1FAA989B2C517247007E98C5 /* ComponentsKit */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		1F4AB0B02C52415F0077EE71 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		1F4AB0B42C524DD00077EE71 /* AppNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavController.swift; sourceTree = "<group>"; };
 		1F96002D2C51402100C83FCB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Logger; sourceTree = "<group>"; };
 		1F9600302C5143E600C83FCB /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		1FAA989A2C516F79007E98C5 /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ComponentsKit; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				1FF5FB642C4FBF26001CC8ED /* AppDelegate.swift */,
 				1FF5FBA32C4FC47B001CC8ED /* AppCoordinator.swift */,
+				1F4AB0B42C524DD00077EE71 /* AppNavController.swift */,
 				1FF5FBB72C50EC0D001CC8ED /* AppViewController.swift */,
 				1F4AB0B02C52415F0077EE71 /* AppConstants.swift */,
 				1F9600302C5143E600C83FCB /* AppStrings.swift */,
@@ -322,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4AB0B52C524DD00077EE71 /* AppNavController.swift in Sources */,
 				1FF5FB9C2C4FC3A6001CC8ED /* PokemonListSC.swift in Sources */,
 				1FF5FBAE2C4FC81E001CC8ED /* SplashVM.swift in Sources */,
 				1FF5FBB82C50EC0D001CC8ED /* AppViewController.swift in Sources */,

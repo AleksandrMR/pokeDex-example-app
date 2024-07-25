@@ -28,7 +28,7 @@ extension AppDelegate {
     private func setupAfterLaunch() {
         AKFonts.registerFonts()
         
-        let navController = UINavigationController.init()
+        let navController = AppNavController.init()
         appCoordinator = AppCoordinator.init(navigationController: navController)
         appCoordinator?.start()
         
