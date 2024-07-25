@@ -24,6 +24,17 @@ public struct CKListItem1: View {
     
     // MARK: - Body
     public var body: some View {
+        Button {
+            action()
+        } label: {
+            itemLabel
+        }
+    }
+}
+
+// MARK: - Extensions
+extension CKListItem1 {
+    @ViewBuilder var itemLabel: some View {
         HStack {
             AsyncImage(url: URL(string: imgPath)) { image in
                 image.resizable()
@@ -35,9 +46,6 @@ public struct CKListItem1: View {
             Text(title)
                 .font(AKFonts.pokemonClassic(16).font)
                 .foregroundColor(AKColors.blue3b4cca.color)
-        }
-        .onTapGesture {
-            action()
         }
         .background(AKColors.yellowffde00.color)
     }
