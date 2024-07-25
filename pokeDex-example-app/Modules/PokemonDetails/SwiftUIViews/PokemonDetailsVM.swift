@@ -9,9 +9,15 @@ import SwiftUI
 
 class PokemonDetailsVM: ObservableObject {
     
+    let headerHeight: CGFloat = 480
+    let circleHeight: CGFloat = 350
+    let imgPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/5.png"
+    
     // MARK: - Var
     weak var coordinator: PokemonDetailsCoordinator?
     
     // MARK: - Flow funcs
-    
+    func goBack() {
+        coordinator?.goBack()
+    }
 }

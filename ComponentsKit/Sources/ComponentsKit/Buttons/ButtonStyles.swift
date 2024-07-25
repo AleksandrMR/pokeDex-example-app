@@ -14,6 +14,7 @@ struct Button1Style: ButtonStyle {
             .font(AKFonts.pokemonClassic(15).font)
             .padding()
             .foregroundColor(AKColors.redcc0000.color)
+            .frame(maxWidth: .infinity)
             .background(AKColors.yellowffde00.color)
             .cornerRadius(12)
     }

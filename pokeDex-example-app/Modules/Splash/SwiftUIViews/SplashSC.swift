@@ -45,6 +45,7 @@ extension SplashSC {
         CKButton1(title: AppStrings.Splash.btnGoToApp) {
             vm.goToHome()
         }
+        .padding([.bottom, .horizontal], 25)
     }
 }
 

@@ -15,6 +15,10 @@ struct AppStrings {
         static let btnGoToApp = "Go to App"
     }
     
+    struct PokemonDetails {
+        static let btnGoBack = "Go Back"
+    }
+    
     struct Log {
         static let appCoordinatorStart = "AppCoordinator Start"
         static let appCoordinatorDeinit = "AppCoordinator Deinit"

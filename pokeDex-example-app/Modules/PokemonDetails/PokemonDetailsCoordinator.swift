@@ -30,6 +30,10 @@ class PokemonDetailsCoordinator: Coordinator {
         goToDetailsVC()
     }
     
+    func goBack() {
+        navigationController.popViewController(animated: true)
+    }
+    
     // MARK: - Flow private funcs
     private func goToDetailsVC() {
         let vm = PokemonDetailsVM.init()
