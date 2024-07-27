@@ -17,20 +17,28 @@ struct PokemonListSC: View {
     // MARK: - Body
     var body: some View {
         VStack {
-            List (1..<100) { item in
-                CKListItem1(title: "PokemonListSC",
-                            imgPath: vm.getPokImagePath(id: item)) {
+            List(vm.pokemonList, id: \.self) { item in
+                CKListItem1(title: item.name,
+                            imgPath: vm.getPokImagePath(id: item.id)) {
                     vm.goToPokemonDetails()
                 }
-                .listRowSeparator(.hidden)
-                .listRowBackground(AKColors.yellowffde00.color)
+                            .listRowSeparator(.hidden)
+                            .listRowBackground(AKColors.yellowffde00.color)
+                            .onAppear {
+                                if item.id == vm.pokemonList.endIndex - 20 {
+                                    vm.getPokemonList()
+                                }
+                            }
             }
             .listRowSpacing(3)
             .frame(maxWidth: .infinity)
             .edgesIgnoringSafeArea(.all)
-            .listStyle(PlainListStyle())
+            .listStyle(.plain)
         }
         .background(AKColors.redcc0000.color)
+        .onViewDidLoad {
+            vm.getPokemonList()
+        }
     }
 }
 

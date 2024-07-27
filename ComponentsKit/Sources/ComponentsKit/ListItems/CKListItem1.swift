@@ -43,7 +43,7 @@ extension CKListItem1 {
             }
             .frame(width: 100, height: 100, alignment: .center)
             Spacer()
-            Text(title)
+            Text(title.uppercased())
                 .font(AKFonts.pokemonClassic(16).font)
                 .foregroundColor(AKColors.blue3b4cca.color)
         }

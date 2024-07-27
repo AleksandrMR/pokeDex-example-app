@@ -11,7 +11,7 @@ class PokemonDetailsVM: ObservableObject {
     
     let headerHeight: CGFloat = 480
     let circleHeight: CGFloat = 350
-    let imgPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/5.png"
+    let imgPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/6.png"
     
     // MARK: - Var
     weak var coordinator: PokemonDetailsCoordinator?

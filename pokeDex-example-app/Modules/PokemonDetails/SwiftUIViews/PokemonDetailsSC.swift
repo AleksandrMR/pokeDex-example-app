@@ -35,11 +35,13 @@ extension PokemonDetailsSC {
                     .frame(width: UIScreen.main.bounds.width,
                            height:  geometry.frame(in: .global).minY > 0 ? geometry.frame(in: .global).minY + vm.circleHeight : vm.circleHeight)
                     .foregroundColor(AKColors.yellowb3a125.color)
+                    .shadow(color: AKColors.yellowb3a125.color ,radius: 10)
                 AsyncImage(url: URL(string: vm.imgPath)) { image in
                     image.resizable()
                 } placeholder: {
                     ProgressView()
                 }
+                .padding()
                 .offset(y: -geometry.frame(in: .global).minY)
                 .frame(width: UIScreen.main.bounds.width,
                        height:  geometry.frame(in: .global).minY > 0 ? geometry.frame(in: .global).minY + vm.headerHeight : vm.headerHeight)
