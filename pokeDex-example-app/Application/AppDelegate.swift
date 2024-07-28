@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 // MARK: - Extensions
-extension AppDelegate {
-    private func setupAfterLaunch() {
+private extension AppDelegate {
+    func setupAfterLaunch() {
         AKFonts.registerFonts()
         
         let navController = AppNavController.init()

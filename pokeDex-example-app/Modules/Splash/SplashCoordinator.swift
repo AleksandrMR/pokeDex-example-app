@@ -36,9 +36,11 @@ class SplashCoordinator: Coordinator {
         children.append(homeCoordinator)
         homeCoordinator.start()
     }
-    
-    // MARK: - Flow private funcs
-    private func goToSplashVC() {
+}
+
+// MARK: - Extensions
+private extension SplashCoordinator {
+    func goToSplashVC() {
         let vm = SplashVM.init()
         vm.coordinator = self
         let vc = SplashRootVC()

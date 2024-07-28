@@ -26,7 +26,7 @@ struct SplashSC: View {
 }
 
 // MARK: - Extensions
-extension SplashSC {
+private extension SplashSC {
     @ViewBuilder var appName: some View {
         Text(AppStrings.appName)
             .font(AKFonts.pokemonClassic(35).font)
@@ -42,7 +42,7 @@ extension SplashSC {
     }
     
     @ViewBuilder var btnGoToApp: some View {
-        CKButton1(title: AppStrings.Splash.btnGoToApp) {
+        CKButton1(iconPosition: .right, title: AppStrings.Splash.btnGoToApp) {
             vm.goToHome()
         }
         .padding([.bottom, .horizontal], 25)

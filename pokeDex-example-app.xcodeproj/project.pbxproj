@@ -15,6 +15,7 @@
 		1F8812262C5505490038CBD0 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8812252C5505490038CBD0 /* Pokemon.swift */; };
 		1F8812292C55225F0038CBD0 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8812282C55225F0038CBD0 /* ViewDidLoadModifier.swift */; };
 		1F88122B2C5522CB0038CBD0 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F88122A2C5522CB0038CBD0 /* ViewExtension.swift */; };
+		1F88122E2C55435A0038CBD0 /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F88122D2C55435A0038CBD0 /* PokemonManager.swift */; };
 		1F96002F2C5143AC00C83FCB /* Logger in Frameworks */ = {isa = PBXBuildFile; productRef = 1F96002E2C5143AC00C83FCB /* Logger */; };
 		1F9600312C5143E600C83FCB /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9600302C5143E600C83FCB /* AppStrings.swift */; };
 		1FAA989C2C517247007E98C5 /* ComponentsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1FAA989B2C517247007E98C5 /* ComponentsKit */; };
@@ -57,10 +58,10 @@
 		1F8812252C5505490038CBD0 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		1F8812282C55225F0038CBD0 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		1F88122A2C5522CB0038CBD0 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		1F88122D2C55435A0038CBD0 /* PokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
 		1F96002D2C51402100C83FCB /* Logger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Logger; sourceTree = "<group>"; };
 		1F9600302C5143E600C83FCB /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		1FAA989A2C516F79007E98C5 /* ComponentsKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ComponentsKit; sourceTree = "<group>"; };
-		1FB852272C53B5610016666E /* pokeDex-example-appTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pokeDex-example-appTests"; sourceTree = "<group>"; };
 		1FF5FB612C4FBF26001CC8ED /* pokeDex-example-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokeDex-example-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF5FB642C4FBF26001CC8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,10 +139,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		1F88122C2C5543410038CBD0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1F88122D2C55435A0038CBD0 /* PokemonManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		1FF5FB582C4FBF25001CC8ED = {
 			isa = PBXGroup;
 			children = (
-				1FB852272C53B5610016666E /* pokeDex-example-appTests */,
 				1F96002D2C51402100C83FCB /* Logger */,
 				1FF5FBB32C50DDB9001CC8ED /* AssetKit */,
 				1F7EC3262C53AA25007EAC16 /* Networking */,
@@ -168,6 +176,7 @@
 				1FF5FB942C4FC17B001CC8ED /* Application */,
 				1F8812242C5504E70038CBD0 /* Models */,
 				1FF5FB952C4FC1A4001CC8ED /* Modules */,
+				1F88122C2C5543410038CBD0 /* Managers */,
 				1F8812272C55222D0038CBD0 /* Helpers */,
 				1FF5FBB92C50EC82001CC8ED /* Extensions */,
 			);
@@ -383,6 +392,7 @@
 				1FF5FBA22C4FC406001CC8ED /* PokemonDetailsVM.swift in Sources */,
 				1F4AB0BE2C525F340077EE71 /* PokemonListSC.swift in Sources */,
 				1FF5FB9A2C4FC356001CC8ED /* HomeRootVC.swift in Sources */,
+				1F88122E2C55435A0038CBD0 /* PokemonManager.swift in Sources */,
 				1FF5FBA92C4FC7C9001CC8ED /* SplashRootVC.swift in Sources */,
 				1F8812292C55225F0038CBD0 /* ViewDidLoadModifier.swift in Sources */,
 				1FF5FBB22C4FC878001CC8ED /* SplashCoordinator.swift in Sources */,

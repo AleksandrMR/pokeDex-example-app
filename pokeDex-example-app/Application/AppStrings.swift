@@ -10,6 +10,7 @@ import Foundation
 struct AppStrings {
     
     static let appName = "PokeDex App"
+    static let noData = "no data"
 
     struct Splash {
         static let btnGoToApp = "Go to App"
@@ -17,6 +18,9 @@ struct AppStrings {
     
     struct PokemonDetails {
         static let btnGoBack = "Go Back"
+        static let pokTypeTitle = "Type - "
+        static let pokHeightTitle = "Height - "
+        static let pokWeightTitle = "Weight - "
     }
     
     struct Log {

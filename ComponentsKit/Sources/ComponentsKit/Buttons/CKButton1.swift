@@ -10,14 +10,21 @@ import AssetKit
 
 public struct CKButton1: View {
     
+    public enum IconPosition {
+        case left
+        case right
+    }
+    
     // MARK: - Let
+    private let iconPosition: IconPosition
     private let title: String
     private let action: ()->()
     
     // MARK: - Initialization func
-    public init(title: String, action: @escaping () -> Void) {
+    public init(iconPosition: IconPosition, title: String, action: @escaping () -> Void) {
         self.title = title
         self.action = action
+        self.iconPosition = iconPosition
     }
     
     // MARK: - Body
@@ -25,26 +32,43 @@ public struct CKButton1: View {
         Button {
             action()
         } label: {
-            btnLabel
+            switch iconPosition {
+            case .left:
+                btnLabelWithLeftIcon
+            case .right:
+                btnLabelWithRightIcon
+            }
         }
         .buttonStyle(Button1Style())
     }
 }
 
 // MARK: - Extensions
-extension CKButton1 {
-    @ViewBuilder var btnLabel: some View {
+private extension CKButton1 {
+    @ViewBuilder var btnLabelWithRightIcon: some View {
         HStack {
             Text(title)
+            Spacer()
             AKIcons.arrowRight.icon
                 .resizable()
                 .scaledToFit()
                 .frame(height: 20)
         }
     }
+    
+    @ViewBuilder var btnLabelWithLeftIcon: some View {
+        HStack {
+            AKIcons.arrowLeft.icon
+                .resizable()
+                .scaledToFit()
+                .frame(height: 20)
+            Spacer()
+            Text(title)
+        }
+    }
 }
 
 // MARK: - Preview
 #Preview {
-    CKButton1(title: "CKButton1") { }
+    CKButton1(iconPosition: .right, title: "CKButton1") { }
 }

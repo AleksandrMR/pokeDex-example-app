@@ -33,9 +33,11 @@ class PokemonDetailsCoordinator: Coordinator {
     func goBack() {
         navigationController.popViewController(animated: true)
     }
-    
-    // MARK: - Flow private funcs
-    private func goToDetailsVC() {
+}
+
+// MARK: - Extensions
+private extension PokemonDetailsCoordinator {
+    func goToDetailsVC() {
         let vm = PokemonDetailsVM.init()
         vm.coordinator = self
         let vc = PokemonDetailsRootVC.init()

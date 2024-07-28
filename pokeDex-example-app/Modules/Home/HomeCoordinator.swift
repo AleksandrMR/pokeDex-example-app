@@ -36,9 +36,11 @@ class HomeCoordinator: Coordinator {
         children.append(pokemonDetailsCoordinator)
         pokemonDetailsCoordinator.start()
     }
-    
-    // MARK: - Flow private funcs
-    private func goToHomeVC() {
+}
+
+// MARK: - Extensions
+private extension HomeCoordinator {
+    func goToHomeVC() {
         let vm = PokemonListVM.init()
         vm.coordinator = self
         let vc = HomeRootVC()

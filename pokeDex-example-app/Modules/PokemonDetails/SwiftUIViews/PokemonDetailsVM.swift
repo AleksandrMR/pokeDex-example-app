@@ -6,18 +6,33 @@
 //
 
 import SwiftUI
+import Combine
 
 class PokemonDetailsVM: ObservableObject {
     
-    let headerHeight: CGFloat = 480
-    let circleHeight: CGFloat = 350
-    let imgPath = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/6.png"
-    
     // MARK: - Var
     weak var coordinator: PokemonDetailsCoordinator?
+    @Published var pokemon: Pokemon?
+    
+    // MARK: - private Var
+    private var cancellables: Set<AnyCancellable> = []
+    
+    // MARK: - Initialization func
+    init() {
+        listenOnPublishers()
+    }
     
     // MARK: - Flow funcs
     func goBack() {
         coordinator?.goBack()
+    }
+    
+    // MARK: - Flow private funcs
+    private func listenOnPublishers() {
+        PokemonManager.shared.$selectedPokemon
+            .sink { value in
+                self.pokemon = value
+            }
+            .store(in: &cancellables)
     }
 }

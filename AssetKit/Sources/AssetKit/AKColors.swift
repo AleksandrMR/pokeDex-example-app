@@ -17,7 +17,7 @@ public enum AKColors: String {
     /// Yellow
     case yellowb3a125
     case yellowffde00
-    
+    case white
 }
 
 public extension AKColors {

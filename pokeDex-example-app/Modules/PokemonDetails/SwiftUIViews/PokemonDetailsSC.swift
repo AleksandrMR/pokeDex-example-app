@@ -26,46 +26,33 @@ struct PokemonDetailsSC: View {
 }
 
 // MARK: - Extensions
-extension PokemonDetailsSC {
+private extension PokemonDetailsSC {
     @ViewBuilder var header: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Circle()
-                    .offset(y: -geometry.frame(in: .global).minY)
-                    .frame(width: UIScreen.main.bounds.width,
-                           height:  geometry.frame(in: .global).minY > 0 ? geometry.frame(in: .global).minY + vm.circleHeight : vm.circleHeight)
-                    .foregroundColor(AKColors.yellowb3a125.color)
-                    .shadow(color: AKColors.yellowb3a125.color ,radius: 10)
-                AsyncImage(url: URL(string: vm.imgPath)) { image in
-                    image.resizable()
-                } placeholder: {
-                    ProgressView()
-                }
-                .padding()
-                .offset(y: -geometry.frame(in: .global).minY)
-                .frame(width: UIScreen.main.bounds.width,
-                       height:  geometry.frame(in: .global).minY > 0 ? geometry.frame(in: .global).minY + vm.headerHeight : vm.headerHeight)
-            }
-        }
-        .frame(height: vm.headerHeight)
+        ImageWithParallax(imgPath: vm.pokemon?.imgPath ?? AppStrings.noData)
     }
     
     @ViewBuilder var infoSection: some View {
         VStack(alignment: .leading, spacing: 15) {
             HStack {
-                Text("Pokemon Name")
-                    .font(AKFonts.pokemonClassic(18).font)
+                Text(vm.pokemon?.name.uppercased() ?? AppStrings.noData)
+                    .font(AKFonts.pokemonClassic(22).font)
                     .foregroundColor(AKColors.yellowffde00.color)
                 Spacer()
             }
-            Text("some 3 info about pokemon ...")
-                .foregroundColor(.white)
-                .font(AKFonts.pokemonClassic(14).font)
-            CKButton1(title: AppStrings.PokemonDetails.btnGoBack) {
+            Spacer()
+            CKListItem2(title: AppStrings.PokemonDetails.pokTypeTitle,
+                        value: vm.pokemon?.details.type ?? AppStrings.noData)
+            CKListItem2(title: AppStrings.PokemonDetails.pokHeightTitle,
+                        value: vm.pokemon?.details.height ?? AppStrings.noData)
+            CKListItem2(title: AppStrings.PokemonDetails.pokWeightTitle,
+                        value: vm.pokemon?.details.weight ?? AppStrings.noData)
+            Spacer()
+            CKButton1(iconPosition: .left, title: AppStrings.PokemonDetails.btnGoBack) {
                 vm.goBack()
             }
             .padding(.top, 25)
-            Spacer(minLength: UIScreen.main.bounds.height - vm.headerHeight)
+            .padding(.bottom, 44)
+            Spacer()
         }
         .padding(.top, 25)
         .padding(.horizontal)

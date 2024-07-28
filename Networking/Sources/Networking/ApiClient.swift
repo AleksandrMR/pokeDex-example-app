@@ -10,14 +10,16 @@ import Logger
 
 protocol ApiProtocol {
     func sendRequest<T: Decodable>(endpoint: EndpointProvider, responseModel: T.Type) async throws -> T
-//    func download(from endpoint: EndpointProvider) async -> Result<Data?, RequestError>
+    //    func download(from endpoint: EndpointProvider) async -> Result<Data?, RequestError>
 }
 
-// MARK: - Extensions
+
 public class  ApiClient: ApiProtocol {
     
+    // MARK: - Initialization func
     public init() { }
     
+    // MARK: - Flow funcs
     public func sendRequest<T: Decodable>(endpoint: EndpointProvider, responseModel: T.Type) async throws -> T {
         do {
             let request = try endpoint.urlRequest()
@@ -29,7 +31,10 @@ public class  ApiClient: ApiProtocol {
             throw RequestError.unknown
         }
     }
-    
+}
+
+// MARK: - Extensions
+extension ApiClient {
     private func manageResponse<T: Decodable>(data: Data, request: URLRequest, response: URLResponse) throws -> T {
         guard let response = response as? HTTPURLResponse else {
             Logger.shared.printLog(request, logType: .response, .error)

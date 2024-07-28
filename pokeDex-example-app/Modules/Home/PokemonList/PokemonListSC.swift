@@ -19,8 +19,8 @@ struct PokemonListSC: View {
         VStack {
             List(vm.pokemonList, id: \.self) { item in
                 CKListItem1(title: item.name,
-                            imgPath: vm.getPokImagePath(id: item.id)) {
-                    vm.goToPokemonDetails()
+                            imgPath: item.imgPath) {
+                    vm.getPokemonDetails(id: item.id)
                 }
                             .listRowSeparator(.hidden)
                             .listRowBackground(AKColors.yellowffde00.color)

@@ -33,7 +33,7 @@ public struct CKListItem1: View {
 }
 
 // MARK: - Extensions
-extension CKListItem1 {
+private extension CKListItem1 {
     @ViewBuilder var itemLabel: some View {
         HStack {
             AsyncImage(url: URL(string: imgPath)) { image in
