@@ -35,6 +35,7 @@
 		1F02F14A2C56B3DE00003F22 /* AssetKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1F02F12B2C56B3DE00003F22 /* AssetKit */; };
 		1F02F14C2C56B3DE00003F22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */; };
 		1F02F14D2C56B3DE00003F22 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF5FBA62C4FC720001CC8ED /* Splash.storyboard */; };
+		1F1696092C57CE35008F8C6F /* PokemonListVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1696082C57CE35008F8C6F /* PokemonListVMTests.swift */; };
 		1F4AB0B52C524DD00077EE71 /* AppNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AB0B42C524DD00077EE71 /* AppNavController.swift */; };
 		1F4AB0BE2C525F340077EE71 /* PokemonListSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AB0BB2C525F340077EE71 /* PokemonListSC.swift */; };
 		1F4AB0BF2C525F340077EE71 /* PokemonListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4AB0BC2C525F340077EE71 /* PokemonListVM.swift */; };
@@ -50,7 +51,6 @@
 		1FB852262C53B3E70016666E /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 1FB852252C53B3E70016666E /* Networking */; };
 		1FF5FB652C4FBF26001CC8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FB642C4FBF26001CC8ED /* AppDelegate.swift */; };
 		1FF5FB6E2C4FBF26001CC8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */; };
-		1FF5FB7C2C4FBF26001CC8ED /* pokeDex_example_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FB7B2C4FBF26001CC8ED /* pokeDex_example_appTests.swift */; };
 		1FF5FB9A2C4FC356001CC8ED /* HomeRootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FB992C4FC356001CC8ED /* HomeRootVC.swift */; };
 		1FF5FB9E2C4FC3C5001CC8ED /* PokemonDetailsSC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FB9D2C4FC3C5001CC8ED /* PokemonDetailsSC.swift */; };
 		1FF5FBA22C4FC406001CC8ED /* PokemonDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF5FBA12C4FC406001CC8ED /* PokemonDetailsVM.swift */; };
@@ -79,6 +79,8 @@
 /* Begin PBXFileReference section */
 		1F02F1512C56B3DE00003F22 /* pokeDex-example-app-tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokeDex-example-app-tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F02F1522C56B3DE00003F22 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Tests-Info.plist"; path = "/Users/AleksandR/Documents/DevApp/DevAppSpace/pokeDex-example-app/Tests-Info.plist"; sourceTree = "<absolute>"; };
+		1F1696082C57CE35008F8C6F /* PokemonListVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListVMTests.swift; sourceTree = "<group>"; };
+		1F16960A2C57D008008F8C6F /* pokeDex-example-app-tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "pokeDex-example-app-tests.xctestplan"; sourceTree = "<group>"; };
 		1F4AB0B42C524DD00077EE71 /* AppNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavController.swift; sourceTree = "<group>"; };
 		1F4AB0BB2C525F340077EE71 /* PokemonListSC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonListSC.swift; sourceTree = "<group>"; };
 		1F4AB0BC2C525F340077EE71 /* PokemonListVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonListVM.swift; sourceTree = "<group>"; };
@@ -97,7 +99,6 @@
 		1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FF5FB722C4FBF26001CC8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FF5FB772C4FBF26001CC8ED /* pokeDex-example-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "pokeDex-example-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FF5FB7B2C4FBF26001CC8ED /* pokeDex_example_appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pokeDex_example_appTests.swift; sourceTree = "<group>"; };
 		1FF5FB992C4FC356001CC8ED /* HomeRootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRootVC.swift; sourceTree = "<group>"; };
 		1FF5FB9D2C4FC3C5001CC8ED /* PokemonDetailsSC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsSC.swift; sourceTree = "<group>"; };
 		1FF5FBA12C4FC406001CC8ED /* PokemonDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsVM.swift; sourceTree = "<group>"; };
@@ -228,7 +229,8 @@
 		1FF5FB7A2C4FBF26001CC8ED /* pokeDex-example-appTests */ = {
 			isa = PBXGroup;
 			children = (
-				1FF5FB7B2C4FBF26001CC8ED /* pokeDex_example_appTests.swift */,
+				1F1696082C57CE35008F8C6F /* PokemonListVMTests.swift */,
+				1F16960A2C57D008008F8C6F /* pokeDex-example-app-tests.xctestplan */,
 			);
 			path = "pokeDex-example-appTests";
 			sourceTree = "<group>";
@@ -396,6 +398,7 @@
 					};
 					1FF5FB762C4FBF26001CC8ED = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1540;
 						TestTargetID = 1FF5FB602C4FBF25001CC8ED;
 					};
 				};
@@ -511,7 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF5FB7C2C4FBF26001CC8ED /* pokeDex_example_appTests.swift in Sources */,
+				1F1696092C57CE35008F8C6F /* PokemonListVMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +785,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -794,6 +798,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/pokeDex-example-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/pokeDex-example-app";
@@ -805,6 +810,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

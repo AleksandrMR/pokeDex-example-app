@@ -7,14 +7,14 @@
 
 import Foundation
 
-public struct PokemonResponse: Decodable {
+public struct PokemonResponse: Decodable, Equatable {
     public let count: Int
     public let next: String
     public let previous: String?
     public let results: [Pokemon]
 }
 
-public struct Pokemon: Decodable {
+public struct Pokemon: Decodable, Equatable {
     public let name: String
     public let detailsUrl: String
     

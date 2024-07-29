@@ -7,6 +7,7 @@
 
 import UIKit
 import Logger
+import Networking
 
 protocol Coordinator: AnyObject {
     var parentCoordinator: Coordinator? { get set }
@@ -17,14 +18,18 @@ protocol Coordinator: AnyObject {
 
 class AppCoordinator: Coordinator {
     
+    // MARK: - private Let
+    private let apiClient: ApiProtocol
+    
     // MARK: - Var
-    var parentCoordinator: Coordinator?
+    weak var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
     
     // MARK: - Initialization func
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, apiClient: ApiProtocol) {
         self.navigationController = navigationController
+        self.apiClient = apiClient
     }
     
     deinit {
@@ -39,7 +44,7 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Flow private funcs
     private func initSplashCoordinator() {
-        let splashCoordinator = SplashCoordinator.init(navigationController: navigationController)
+        let splashCoordinator = SplashCoordinator.init(navigationController: navigationController, apiClient: apiClient)
         splashCoordinator.parentCoordinator = self
         children.append(splashCoordinator)
         splashCoordinator.start()

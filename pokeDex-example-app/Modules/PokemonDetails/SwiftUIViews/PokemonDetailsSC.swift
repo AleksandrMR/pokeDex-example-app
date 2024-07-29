@@ -68,6 +68,6 @@ private extension PokemonDetailsSC {
 }
 
 // MARK: - Preview
-#Preview {
-    PokemonDetailsSC(vm: PokemonDetailsVM())
-}
+//#Preview {
+//    PokemonDetailsSC(vm: PokemonDetailsVM())
+//}

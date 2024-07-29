@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Networking
 import AssetKit
 
 @main
@@ -29,7 +30,8 @@ private extension AppDelegate {
         AKFonts.registerFonts()
         
         let navController = AppNavController.init()
-        appCoordinator = AppCoordinator.init(navigationController: navController)
+        let apiClient = ApiClient.init()
+        appCoordinator = AppCoordinator.init(navigationController: navController, apiClient: apiClient)
         appCoordinator?.start()
         
         window?.rootViewController = navController

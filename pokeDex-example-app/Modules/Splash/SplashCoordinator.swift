@@ -7,17 +7,22 @@
 
 import UIKit
 import Logger
+import Networking
 
 class SplashCoordinator: Coordinator {
     
+    // MARK: - private Let
+    private let apiClient: ApiProtocol
+    
     // MARK: - Var
-    var parentCoordinator: Coordinator?
+    weak var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
     
     // MARK: - Initialization func
-    init(navigationController : UINavigationController) {
+    init(navigationController : UINavigationController, apiClient: ApiProtocol) {
         self.navigationController = navigationController
+        self.apiClient = apiClient
     }
     
     deinit {
@@ -31,7 +36,7 @@ class SplashCoordinator: Coordinator {
     }
     
     func initHomeCoordinator() {
-        let homeCoordinator = HomeCoordinator.init(navigationController: navigationController)
+        let homeCoordinator = HomeCoordinator.init(navigationController: navigationController, apiClient: apiClient)
         homeCoordinator.parentCoordinator = self
         children.append(homeCoordinator)
         homeCoordinator.start()

@@ -10,15 +10,23 @@ import Combine
 
 class PokemonDetailsVM: ObservableObject {
     
-    // MARK: - Var
-    weak var coordinator: PokemonDetailsCoordinator?
-    @Published var pokemon: Pokemon?
+    // MARK: - private Let
+    private let networkDataProvider: IPokemonDataProvider
     
+    // MARK: - Published var
+    @Published var pokemon: Pokemon?
+
     // MARK: - private Var
     private var cancellables: Set<AnyCancellable> = []
+    private weak var coordinator: IPokemonDetailsCoordinator?
     
     // MARK: - Initialization func
-    init() {
+    init(
+        coordinator: IPokemonDetailsCoordinator,
+        pokemonDataProvider: IPokemonDataProvider
+    ) {
+        self.coordinator = coordinator
+        self.networkDataProvider = pokemonDataProvider
         listenOnPublishers()
     }
     
@@ -29,7 +37,7 @@ class PokemonDetailsVM: ObservableObject {
     
     // MARK: - Flow private funcs
     private func listenOnPublishers() {
-        PokemonManager.shared.$selectedPokemon
+        networkDataProvider.selectedPokemonPublisher
             .sink { value in
                 self.pokemon = value
             }

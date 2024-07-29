@@ -2,11 +2,12 @@ import XCTest
 @testable import Networking
 
 final class NetworkingTests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    func testAsURLRequest() throws {
+        let mockEndpointProvider = MockEndpoint()
+        let urlRequest = try? mockEndpointProvider.urlRequest()
+        XCTAssertNotNil(urlRequest)
+        XCTAssertEqual(urlRequest?.url?.absoluteString, "https://example.com/test")
+        XCTAssertEqual(urlRequest?.httpMethod, "GET")
+        XCTAssertEqual(urlRequest?.allHTTPHeaderFields?["Content-Type"], "application/json")
     }
 }

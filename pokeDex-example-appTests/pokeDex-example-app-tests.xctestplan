@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "DDE75158-BF06-4530-A39D-C8C809D37782",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:pokeDex-example-app.xcodeproj",
+        "identifier" : "1FF5FB762C4FBF26001CC8ED",
+        "name" : "pokeDex-example-appTests"
+      }
+    }
+  ],
+  "version" : 1
+}

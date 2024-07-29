@@ -12,17 +12,23 @@ import Logger
 
 class PokemonListVM: ObservableObject {
     
-    // MARK: - Var
-    weak var coordinator: HomeCoordinator?
+    // MARK: - private Let
+    private let networkDataProvider: IPokemonDataProvider
     
     // MARK: - Published var
     @Published var pokemonList: [Pokemon] = []
     
     // MARK: - private Var
     private var cancellables: Set<AnyCancellable> = []
+    private weak var coordinator: IHomeCoordinator?
     
     // MARK: - Initialization func
-    init() {
+    init(
+        coordinator: IHomeCoordinator,
+        pokemonDataProvider: IPokemonDataProvider
+    ) {
+        self.coordinator = coordinator
+        self.networkDataProvider = pokemonDataProvider
         listenOnPublishers()
     }
     
@@ -33,7 +39,7 @@ class PokemonListVM: ObservableObject {
     
     // MARK: - Flow private funcs
     private func listenOnPublishers() {
-        PokemonManager.shared.$pokemonList
+        networkDataProvider.pokemonListPublisher
             .sink { list in
                 self.pokemonList = list
             }
@@ -43,15 +49,15 @@ class PokemonListVM: ObservableObject {
 
 // MARK: - Extensions
 extension PokemonListVM {
-
+    
     @MainActor
     func getPokemonList() {
-        PokemonManager.shared.getPokemonList()
+        networkDataProvider.getPokemonList()
     }
     
     @MainActor
     func getPokemonDetails(id: Int) {
-        PokemonManager.shared.getPokemonDetails(id: id)
+        networkDataProvider.getPokemonDetails(id: id)
         goToPokemonDetails()
     }
 }

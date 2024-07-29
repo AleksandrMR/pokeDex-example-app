@@ -7,17 +7,26 @@
 
 import UIKit
 import Logger
+import Networking
 
-class PokemonDetailsCoordinator: Coordinator {
+protocol IPokemonDetailsCoordinator: AnyObject {
+    func goBack()
+}
+
+class PokemonDetailsCoordinator: Coordinator, IPokemonDetailsCoordinator {
+    
+    // MARK: - private Let
+    private let dataProvider: IPokemonDataProvider
     
     // MARK: - Var
-    var parentCoordinator: Coordinator?
+    weak var parentCoordinator: Coordinator?
     var children: [Coordinator] = []
     var navigationController: UINavigationController
     
     // MARK: - Initialization func
-    init(navigationController : UINavigationController) {
+    init(navigationController : UINavigationController, dataProvider: IPokemonDataProvider) {
         self.navigationController = navigationController
+        self.dataProvider = dataProvider
     }
     
     deinit {
@@ -38,8 +47,7 @@ class PokemonDetailsCoordinator: Coordinator {
 // MARK: - Extensions
 private extension PokemonDetailsCoordinator {
     func goToDetailsVC() {
-        let vm = PokemonDetailsVM.init()
-        vm.coordinator = self
+        let vm = PokemonDetailsVM.init(coordinator: self, pokemonDataProvider: dataProvider)
         let vc = PokemonDetailsRootVC.init()
         vc.vm = vm
         navigationController.pushViewController(vc, animated: true)

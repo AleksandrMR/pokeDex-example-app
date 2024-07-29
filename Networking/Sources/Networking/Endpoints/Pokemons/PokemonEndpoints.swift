@@ -36,9 +36,9 @@ extension PokemonEndpoints {
     public var mockFile: String? {
         switch self {
         case .getPokemonList:
-            return "/api/v2/pokemon"
-        case .getPokemonDetails(id: let id):
-            return "/api/v2/pokemon/\(id)"
+            return "mockResponsePokemonList"
+        case .getPokemonDetails(id: _):
+            return "mockResponsePokemonDetails"
         }
     }
 }

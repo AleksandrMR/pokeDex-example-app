@@ -8,7 +8,7 @@
 import UIKit
 import Logger
 
-protocol ApiProtocol {
+public protocol ApiProtocol {
     func sendRequest<T: Decodable>(endpoint: EndpointProvider, responseModel: T.Type) async throws -> T
 }
 

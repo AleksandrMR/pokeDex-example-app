@@ -44,6 +44,6 @@ struct PokemonListSC: View {
 }
 
 // MARK: - Preview
-#Preview {
-    PokemonListSC(vm: PokemonListVM())
-}
+//#Preview {
+//    PokemonListSC(vm: PokemonListVM())
+//}
