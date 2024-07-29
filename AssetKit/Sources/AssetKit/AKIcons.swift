@@ -10,6 +10,7 @@ import SwiftUI
 public enum AKIcons: String {
     case arrowRight
     case arrowLeft
+    case pokPlaceholder
 }
 
 // MARK: - Extension

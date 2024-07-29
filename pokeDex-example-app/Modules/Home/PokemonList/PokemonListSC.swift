@@ -18,17 +18,18 @@ struct PokemonListSC: View {
     var body: some View {
         VStack {
             List(vm.pokemonList, id: \.self) { item in
-                CKListItem1(title: item.name,
-                            imgPath: item.imgPath) {
+                CKListItem1(imageType: .image,
+                            title: item.name,
+                            image: item.image) {
                     vm.getPokemonDetails(id: item.id)
                 }
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(AKColors.yellowffde00.color)
-                            .onAppear {
-                                if item.id == vm.pokemonList.endIndex - 20 {
-                                    vm.getPokemonList()
-                                }
-                            }
+                .listRowSeparator(.hidden)
+                .listRowBackground(AKColors.yellowffde00.color)
+                .onAppear {
+                    if item.id == vm.pokemonList.endIndex {
+                        vm.getPokemonList()
+                    }
+                }
             }
             .listRowSpacing(3)
             .frame(maxWidth: .infinity)

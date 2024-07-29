@@ -10,9 +10,7 @@ import Logger
 
 protocol ApiProtocol {
     func sendRequest<T: Decodable>(endpoint: EndpointProvider, responseModel: T.Type) async throws -> T
-    //    func download(from endpoint: EndpointProvider) async -> Result<Data?, RequestError>
 }
-
 
 public class  ApiClient: ApiProtocol {
     

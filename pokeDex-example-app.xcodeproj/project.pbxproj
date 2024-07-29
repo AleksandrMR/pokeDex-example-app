@@ -78,7 +78,7 @@
 
 /* Begin PBXFileReference section */
 		1F02F1512C56B3DE00003F22 /* pokeDex-example-app-tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pokeDex-example-app-tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1F02F1522C56B3DE00003F22 /* pokeDex-example-app copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "pokeDex-example-app copy-Info.plist"; path = "/Users/AleksandR/Documents/DevApp/DevAppSpace/pokeDex-example-app/pokeDex-example-app copy-Info.plist"; sourceTree = "<absolute>"; };
+		1F02F1522C56B3DE00003F22 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Tests-Info.plist"; path = "/Users/AleksandR/Documents/DevApp/DevAppSpace/pokeDex-example-app/Tests-Info.plist"; sourceTree = "<absolute>"; };
 		1F4AB0B42C524DD00077EE71 /* AppNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavController.swift; sourceTree = "<group>"; };
 		1F4AB0BB2C525F340077EE71 /* PokemonListSC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonListSC.swift; sourceTree = "<group>"; };
 		1F4AB0BC2C525F340077EE71 /* PokemonListVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonListVM.swift; sourceTree = "<group>"; };
@@ -199,7 +199,6 @@
 				1FF5FB7A2C4FBF26001CC8ED /* pokeDex-example-appTests */,
 				1FF5FB622C4FBF26001CC8ED /* Products */,
 				1FF5FBB42C50E868001CC8ED /* Frameworks */,
-				1F02F1522C56B3DE00003F22 /* pokeDex-example-app copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +242,7 @@
 				1FF5FBB72C50EC0D001CC8ED /* AppViewController.swift */,
 				1F9600302C5143E600C83FCB /* AppStrings.swift */,
 				1FF5FB722C4FBF26001CC8ED /* Info.plist */,
+				1F02F1522C56B3DE00003F22 /* Tests-Info.plist */,
 				1FF5FB6D2C4FBF26001CC8ED /* Assets.xcassets */,
 			);
 			path = Application;
@@ -534,7 +534,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "pokeDex-example-app copy-Info.plist";
+				INFOPLIST_FILE = "Tests-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;
@@ -567,7 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "pokeDex-example-app copy-Info.plist";
+				INFOPLIST_FILE = "Tests-Info.plist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = Splash.storyboard;

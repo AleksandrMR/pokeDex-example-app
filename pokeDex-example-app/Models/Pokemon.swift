@@ -10,11 +10,15 @@ import SwiftUI
 struct Pokemon: Identifiable, Hashable, Equatable {
     let id: Int
     let name: String
-    let image: UIImage?
+    var image: UIImage?
     let imgPath: String
     var details: Details
     
-    init(id: Int, name: String, image: UIImage?, imgPath: String, details: Details) {
+    init(id: Int,
+         name: String,
+         image: UIImage?,
+         imgPath: String,
+         details: Details) {
         self.id = id
         self.name = name
         self.image = image
@@ -28,7 +32,9 @@ struct Details: Equatable, Hashable {
     var height: String
     var weight: String
     
-    init(type: String, height: String, weight: String) {
+    init(type: String,
+         height: String,
+         weight: String) {
         self.type = type
         self.height = height
         self.weight = weight

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetKit
 import Networking
 
 class PokemonManager: ObservableObject {
@@ -22,6 +23,7 @@ class PokemonManager: ObservableObject {
     @Published var selectedPokemon: Pokemon?
     
     // MARK: - private Var
+    private var totalCount = 0
     private var idPokemon = 0
     private var requestOffset = 0
     
@@ -29,13 +31,15 @@ class PokemonManager: ObservableObject {
     @MainActor
     func getPokemonList() {
         let endpoint = PokemonEndpoints.getPokemonList(offset: "\(requestOffset)")
-        requestOffset += 100
-        Task.init {
-            do {
-                let list = try await apiClient.sendRequest(endpoint: endpoint, responseModel: PokemonResponse.self)
-                savePokemonList(networkModel: list)
-            } catch let error as RequestError {
-                apiError = error
+        if totalCount >= requestOffset {
+            requestOffset += 100
+            Task.init {
+                do {
+                    let list = try await apiClient.sendRequest(endpoint: endpoint, responseModel: PokemonResponse.self)
+                    await savePokemonList(networkModel: list)
+                } catch let error as RequestError {
+                    apiError = error
+                }
             }
         }
     }
@@ -62,13 +66,17 @@ private extension PokemonManager {
         return imagePath
     }
     
-    func savePokemonList(networkModel: PokemonResponse) {
+    @MainActor
+    func savePokemonList(networkModel: PokemonResponse) async {
+        totalCount = networkModel.count
         for item in networkModel.results {
             idPokemon += 1
+            let imgPath = getPokImagePath(id: idPokemon)
+            let img = await ImageLoader.shared.loadImage(from: imgPath)
             let pokemon = Pokemon(id: idPokemon,
                                   name: item.name,
-                                  image: nil,
-                                  imgPath: getPokImagePath(id: idPokemon),
+                                  image: img,
+                                  imgPath: imgPath,
                                   details: Details())
             pokemonList.append(pokemon)
         }

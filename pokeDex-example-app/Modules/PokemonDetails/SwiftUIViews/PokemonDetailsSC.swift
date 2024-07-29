@@ -28,7 +28,13 @@ struct PokemonDetailsSC: View {
 // MARK: - Extensions
 private extension PokemonDetailsSC {
     @ViewBuilder var header: some View {
-        ImageWithParallax(imgPath: vm.pokemon?.imgPath ?? AppStrings.noData)
+        if let uiImg = vm.pokemon?.image {
+            ImageWithParallax(imageType: .image, image: Image(uiImage: uiImg))
+        } else {
+            AKIcons.pokPlaceholder.icon
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+        }
     }
     
     @ViewBuilder var infoSection: some View {
